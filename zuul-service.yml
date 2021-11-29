@@ -1,0 +1,36 @@
+
+server:
+  port: 8010
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+   loan-service:
+      path: /customer/**
+      serviceId: LOAN-DEMO
+    hello-server:
+      path: /server/**
+      serviceId: HELLO-SERVER
+    hello-client:
+      path: /client/**
+      serviceId: HELLO-CLIENT
+      
+      
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8030/eureka/
+  instance:
+    hostname: localhost
+
+
+
+# Increase the Hystrix timeout to 60s (for all)
+#hystrix:
+  #command:
+    #default:
+      #execution:
+        #isolation:
+          #thread:
+            #timeoutInMilliseconds: 70000
