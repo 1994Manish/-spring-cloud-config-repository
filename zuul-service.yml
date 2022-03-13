@@ -8,15 +8,7 @@ zuul:
    loan-service:
       path: /customer/**
       serviceId: LOAN-DEMO
-    hello-server:
-      path: /server/**
-      serviceId: HELLO-SERVER
-    hello-client:
-      path: /client/**
-      serviceId: HELLO-CLIENT
       
-      
-
 eureka:
   client:
     serviceUrl:
